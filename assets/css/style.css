@@ -1,0 +1,82 @@
+body {
+    background-image: url("../images/dkcountry.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+h2 {
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#titles{
+    widows: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 200px;
+}
+.character-defender {
+    float: left;
+}
+.info {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    margin: 10px;
+}
+
+#your-character {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    position: relative;
+    top: 200px;
+}
+
+.character {
+    width: 175px;
+    height: 200px;
+    background: #eee;
+    border: 2pt solid black;
+    text-align: center;
+    padding: 10px;
+    padding-top:0;
+}
+
+.dk-character {
+   width: 73%;
+   padding:0px;
+}
+
+#krool {
+    width:84%;
+}
+#diddy {
+    width: 59%;
+}
+#klump {
+    width: 62%;
+}
+
+h3 {
+    color: #222222;
+}
+
+.info {
+    clear: both;
+}
+
+#defender {
+    clear: both;
+}
+
+#your-enemies {
+    clear: both;
+}
