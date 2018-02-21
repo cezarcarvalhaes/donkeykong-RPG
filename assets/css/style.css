@@ -32,7 +32,7 @@ h2 {
     margin: 10px;
 }
 
-#your-character {
+.your-character {
     width: 100%;
     display: flex;
     justify-content:center;
@@ -77,6 +77,37 @@ h3 {
     clear: both;
 }
 
-#your-enemies {
-    clear: both;
+.your-enemies {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    position: relative;
+    top: 200px;
+}
+
+
+.user-character {
+    width: 175px;
+    height: 200px;
+    background: #eee;
+    border: 2pt solid black;
+    text-align: center;
+    padding: 10px;
+    padding-top:0;
+    border: 2px solid limegreen;
+
+}
+
+.npc-character {
+    width: 175px;
+    height: 200px;
+    background: #eee;
+    text-align: center;
+    padding: 10px;
+    padding-top:0;
+    border: 2px solid red;
+}
+
+.battle {
+    justify-content:space-around;
 }

@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="http://code.jquery.com/jquery-3.3.1.js"
 			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
+    <script src ="assets/javascript/game.js"></script>
     <title>Donkey Kong RPG</title>
 </head>
 <body>
@@ -22,36 +23,36 @@
                     <h2>Defender:</h2>
             </div>
         </div>
-        <div id = "your-character">
-                <div class= "character">
+        <div class = "your-character">
+                <div class= "character" id= "donkey-kong">
                     <h4>Donkey Kong</h4>
                     <img class= "dk-character" alt="Donkey Kong" src="assets/images/DK.png">
                     <h4>HP: <span id = "dk-hp">120</span></h4>
                 </div>
-                <div class= "character">
+                <div class= "character" id = "diddy-kong">
                         <h4>Diddy Kong</h4>
                     <img class= "dk-character" id="diddy" alt="Diddy Kong" src="assets/images/diddy.png">
                     <h4>HP: <span id = "diddy-hp">100</span></h4>
                 </div>
-                <div class= "character">
+                <div class= "character" id="king-k-rool">
                     <h4>King K. Rool</h4>
                     <img class= "dk-character" id ="krool" alt="King K. Rool" src="assets/images/krool.png">
                     <h4>HP: <span id = "krool-hp">180</span></h4>
                 </div>
-                <div class= "character">
+                <div class= "character" id = "gen-klump">
                         <h4>Klump</h4>
                     <img class= "dk-character" id= "klump" alt="Klump" src="assets/images/Klump.png">
                     <h4>HP: <span id = "klump-hp">150</span></h4>
                 </div>
         </div>
         <div class="info">
-            <button type="button" class="btn btn-danger">Attack!</button>
+            <button type="button" class="btn btn-danger attack">Attack!</button>
         </div>
 
         <div class = "info">
                 <h2>Enemies Available to Attack:</h2>
         </div>
-        <div id = "your-enemies">
+        <div class = "your-enemies">
                   
         </div>
         
