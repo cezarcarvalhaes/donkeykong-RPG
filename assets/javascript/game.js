@@ -1,10 +1,18 @@
 $(document).ready(function() {
     //Global variables and functions
-    var dkAttackPower = 9;
-    var diddyAttackPower = 8;
-    var kroolAttackPower = 12;
-    var klumpAttackPower = 10;
+    //AttackPower variables to store incremented attack values
+    var dkAttackPower = 0;
+    var diddyAttackPower = 0;
+    var kroolAttackPower = 0;
+    var klumpAttackPower = 0;
 
+    //HP variables to store diminishing HP values
+    var dkHp = 120;
+    var diddyHp = 100; 
+    var kroolHp = 180;
+    var klumpHp = 150;
+
+    //functions to increment attack power
     function dkAttack() {
         dkAttackPower += 9;
     };
@@ -25,16 +33,25 @@ $(document).ready(function() {
         $(".character").off("click");
         //Select a defender and remove ability to select multiple defenders
         $(".npc-character").on("click", function(){
-            $(this).attr("id","foe").removeClass("user-character").appendTo(".your-character"); 
+            $(this).addClass("foe").removeClass("user-character").appendTo(".your-character"); 
             $(".your-character").addClass("battle");
             $(".npc-character").off("click");
         });
+    });
         //Attack!!
+
         $(".attack").on("click",function(){
             //Character is Donkey Kong
             if ($(".user-character").is("#donkey-kong")){
                 dkAttack();
-                console.log(dkAttackPower);
+                //Attack sequences
+                if ($(".foe").is("#king-k-rool")){
+                    kroolHp = kroolHp - dkAttackPower;
+                    var a = parseInt(document.getElementById("dk-hp").textContent);
+                    $("#dk-hp").html(a - 25);
+                    $("#messages").html("<p>You attacked King K. Rool for " + dkAttackPower +" damage!</p><p>King K. Rool counter-attacked for 25 damage!</p>");
+                };
+
             };
 
             //Character is Diddy Kong
@@ -54,6 +71,5 @@ $(document).ready(function() {
             
         });
 
-    });
 
 });
