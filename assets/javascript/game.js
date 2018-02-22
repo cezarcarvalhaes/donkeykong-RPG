@@ -65,6 +65,11 @@ $(document).ready(function() {
                     $("#diddy-hp").html(b - dkAttackPower);
                     $("#messages").html("<p>You attacked Diddy Kong for " + dkAttackPower +" damage!</p><p>Diddy Kong counter-attacked for 10 damage!</p>");
                 };
+
+                //DK dies
+                if (parseInt(document.getElementById("dk-hp").textContent)<=0) {
+                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                };
             };
 
             //Character is Diddy Kong
@@ -95,6 +100,11 @@ $(document).ready(function() {
                     $("#dk-hp").html(b - diddyAttackPower);
                     $("#messages").html("<p>You attacked Donkey Kong for " + diddyAttackPower +" damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
                 };
+
+                //Diddy dies
+                if (parseInt(document.getElementById("diddy-hp").textContent)<=0) {
+                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                };               
             };
 
             //Character is King K. Rool
@@ -125,6 +135,10 @@ $(document).ready(function() {
                     $("#dk-hp").html(b - kroolAttackPower);
                     $("#messages").html("<p>You attacked Donkey Kong for " + kroolAttackPower +" damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
                 };
+                //King K Rool dies
+                if (parseInt(document.getElementById("krool-hp").textContent)<=0) {
+                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                };
             };
 
             //Character is Klump
@@ -154,9 +168,11 @@ $(document).ready(function() {
                     $("#dk-hp").html(b - klumpAttackPower);
                     $("#messages").html("<p>You attacked Donkey Kong for " + klumpAttackPower +" damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
                 };
+                //Klump dies
+                if (parseInt(document.getElementById("klump-hp").textContent)<=0) {
+                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                };
             };
-            
         });
-
 
 });
