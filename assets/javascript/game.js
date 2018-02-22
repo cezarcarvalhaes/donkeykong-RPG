@@ -20,6 +20,10 @@ $(document).ready(function() {
         klumpAttackPower += 10;
     };
 
+    //hides buttons until needed.
+    $(".restart").hide();
+    $(".attack").hide();
+
     function selectFoe (){
         //Select a defender and remove ability to select multiple defenders
         $(".npc-character").on("click", function(){
@@ -27,13 +31,21 @@ $(document).ready(function() {
             $(".your-character").addClass("battle");
             if ($(".your-character").has(".foe")){
                 $(".npc-character").off("click");
-                console.log("true")
-                }
-                else {
-                console.log("false")
+                $(".attack").show();
             };
         });
     };
+
+    function winGame (){
+        $("#messages").html("<p>You Win! Click to play again!</p>");
+        $(".restart").show();
+        console.log("you win!")
+    }
+
+    function loseGame(){
+        $("#messages").html("<p>You Lose! Click to play again!</p>");
+        $(".restart").show();
+    }
 
     //select character and start game. Enemies move below.
 
@@ -91,7 +103,7 @@ $(document).ready(function() {
                 };
                 //DK dies
                 if (parseInt(document.getElementById("dk-hp").textContent)<=0) {
-                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                    loseGame();
                 };
             };
 
@@ -140,7 +152,7 @@ $(document).ready(function() {
                 };
                 //Diddy dies
                 if (parseInt(document.getElementById("diddy-hp").textContent)<=0) {
-                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                    loseGame();
                 };               
             };
 
@@ -189,7 +201,7 @@ $(document).ready(function() {
                 };
                 //King K Rool dies
                 if (parseInt(document.getElementById("krool-hp").textContent)<=0) {
-                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                    loseGame();
                 };
             };
 
@@ -237,14 +249,17 @@ $(document).ready(function() {
                 };
                 //Klump dies
                 if (parseInt(document.getElementById("klump-hp").textContent)<=0) {
-                    $("#messages").html("<p>You Lose! Click to play again!</p>");
+                    loseGame();
                 };
             };
         //win condition
         if (!$("div").hasClass("npc-character")){
-            $("#messages").html("<p>You Win! Click to play again!</p>");
-            console.log("you win");
+           winGame();
         }
+
+        $("#restart-button").click(function() {
+            location.reload();
+        });
 
         });
 
