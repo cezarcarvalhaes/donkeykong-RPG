@@ -6,12 +6,6 @@ $(document).ready(function() {
     var kroolAttackPower = 0;
     var klumpAttackPower = 0;
 
-    //HP variables to store diminishing HP values
-    var dkHp = 120;
-    var diddyHp = 100; 
-    var kroolHp = 180;
-    var klumpHp = 150;
-
     //functions to increment attack power
     function dkAttack() {
         dkAttackPower += 9;
@@ -35,7 +29,9 @@ $(document).ready(function() {
         $(".npc-character").on("click", function(){
             $(this).addClass("foe").removeClass("user-character").appendTo(".your-character"); 
             $(".your-character").addClass("battle");
-            $(".npc-character").off("click");
+            if ($(".your-character").has("div.foe")){
+                $(".npc-character").off("click");
+            };
         });
     });
         //Attack!!
@@ -44,29 +40,120 @@ $(document).ready(function() {
             //Character is Donkey Kong
             if ($(".user-character").is("#donkey-kong")){
                 dkAttack();
-                //Attack sequences
+                //Attack King K Rool
                 if ($(".foe").is("#king-k-rool")){
-                    kroolHp = kroolHp - dkAttackPower;
                     var a = parseInt(document.getElementById("dk-hp").textContent);
                     $("#dk-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("krool-hp").textContent);
+                    $("#krool-hp").html(b - dkAttackPower);
                     $("#messages").html("<p>You attacked King K. Rool for " + dkAttackPower +" damage!</p><p>King K. Rool counter-attacked for 25 damage!</p>");
                 };
+                //Attack Klump
+                if ($(".foe").is("#gen-klump")){
+                    var a = parseInt(document.getElementById("dk-hp").textContent);
+                    $("#dk-hp").html(a - 20);
+                    var b = parseInt(document.getElementById("klump-hp").textContent);
+                    $("#klump-hp").html(b - dkAttackPower);
+                    $("#messages").html("<p>You attacked Klump for " + dkAttackPower +" damage!</p><p>Klump counter-attacked for 20 damage!</p>");
+                };
 
+                //Attack Diddy
+                if ($(".foe").is("#diddy-kong")){
+                    var a = parseInt(document.getElementById("dk-hp").textContent);
+                    $("#dk-hp").html(a - 10);
+                    var b = parseInt(document.getElementById("diddy-hp").textContent);
+                    $("#diddy-hp").html(b - dkAttackPower);
+                    $("#messages").html("<p>You attacked Diddy Kong for " + dkAttackPower +" damage!</p><p>Diddy Kong counter-attacked for 10 damage!</p>");
+                };
             };
 
             //Character is Diddy Kong
             if ($(".user-character").is("#diddy-kong")){
-                console.log("diddy");
+                //Attack King K Rool
+                diddyAttack();
+                if ($(".foe").is("#king-k-rool")){
+                    var a = parseInt(document.getElementById("diddy-hp").textContent);
+                    $("#diddy-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("krool-hp").textContent);
+                    $("#krool-hp").html(b - diddyAttackPower);
+                    $("#messages").html("<p>You attacked King K. Rool for " + diddyAttackPower +" damage!</p><p>King K. Rool counter-attacked for 25 damage!</p>");
+                };
+                //Attack Klump
+                if ($(".foe").is("#gen-klump")){
+                    var a = parseInt(document.getElementById("diddy-hp").textContent);
+                    $("#diddy-hp").html(a - 20);
+                    var b = parseInt(document.getElementById("klump-hp").textContent);
+                    $("#klump-hp").html(b - diddyAttackPower);
+                    $("#messages").html("<p>You attacked Klump for " + diddyAttackPower +" damage!</p><p>Klump counter-attacked for 20 damage!</p>");
+                };
+
+                //Attack DK
+                if ($(".foe").is("#donkey-kong")){
+                    var a = parseInt(document.getElementById("diddy-hp").textContent);
+                    $("#dk-hp").html(a - 10);
+                    var b = parseInt(document.getElementById("dk-hp").textContent);
+                    $("#dk-hp").html(b - diddyAttackPower);
+                    $("#messages").html("<p>You attacked Donkey Kong for " + diddyAttackPower +" damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
+                };
             };
 
             //Character is King K. Rool
             if ($(".user-character").is("#king-k-rool")){
-                console.log("kroc!");
+                kroolAttack();
+                //Attack Diddy
+                if ($(".foe").is("#diddy-kong")){
+                    var a = parseInt(document.getElementById("krool-hp").textContent);
+                    $("#krool-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("diddy-hp").textContent);
+                    $("#diddy-hp").html(b - kroolAttackPower);
+                    $("#messages").html("<p>You attacked Diddy Kong for " + kroolAttackPower +" damage!</p><p>Diddy Kong counter-attacked for 25 damage!</p>");
+                };
+                //Attack Klump
+                if ($(".foe").is("#gen-klump")){
+                    var a = parseInt(document.getElementById("krool-hp").textContent);
+                    $("#krool-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("klump-hp").textContent);
+                    $("#klump-hp").html(b - kroolAttackPower);
+                    $("#messages").html("<p>You attacked Klump for " + kroolAttackPower +" damage!</p><p>Klump counter-attacked for 20 damage!</p>");
+                };
+
+                //Attack DK
+                if ($(".foe").is("#donkey-kong")){
+                    var a = parseInt(document.getElementById("krool-hp").textContent);
+                    $("#krool-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("dk-hp").textContent);
+                    $("#dk-hp").html(b - kroolAttackPower);
+                    $("#messages").html("<p>You attacked Donkey Kong for " + kroolAttackPower +" damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
+                };
             };
 
             //Character is Klump
             if ($(".user-character").is("#gen-klump")){
-                console.log("klump");
+                klumpAttack();
+                if ($(".foe").is("#diddy-kong")){
+                    var a = parseInt(document.getElementById("klump-hp").textContent);
+                    $("#klump-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("diddy-hp").textContent);
+                    $("#diddy-hp").html(b - klumpAttackPower);
+                    $("#messages").html("<p>You attacked Diddy Kong for " + klumpAttackPower +" damage!</p><p>Diddy Kong counter-attacked for 25 damage!</p>");
+                };
+                //Attack King K Rool
+                if ($(".foe").is("#king-k-rool")){
+                    var a = parseInt(document.getElementById("klump-hp").textContent);
+                    $("#klump-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("krool-hp").textContent);
+                    $("#krool-hp").html(b - klumpAttackPower);
+                    $("#messages").html("<p>You attacked Klump for " + klumpAttackPower +" damage!</p><p>King K. Rool counter-attacked for 20 damage!</p>");
+                };
+
+                //Attack DK
+                if ($(".foe").is("#donkey-kong")){
+                    var a = parseInt(document.getElementById("klump-hp").textContent);
+                    $("#klump-hp").html(a - 25);
+                    var b = parseInt(document.getElementById("dk-hp").textContent);
+                    $("#dk-hp").html(b - klumpAttackPower);
+                    $("#messages").html("<p>You attacked Donkey Kong for " + klumpAttackPower +" damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
+                };
             };
             
         });
