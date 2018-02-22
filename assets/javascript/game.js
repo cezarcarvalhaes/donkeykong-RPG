@@ -53,7 +53,7 @@ $(document).ready(function() {
                 //Attack King K Rool
                 if ($(".foe").is("#king-k-rool")){
                     var a = parseInt(document.getElementById("dk-hp").textContent);
-                    $("#dk-hp").html(a - 25);
+                    $("#dk-hp").html(a - 20);
                     var b = parseInt(document.getElementById("krool-hp").textContent);
                     $("#krool-hp").html(b - dkAttackPower);
                     $("#messages").html("<p>You attacked King K. Rool for " + dkAttackPower +" damage!</p><p>King K. Rool counter-attacked for 25 damage!</p>");
@@ -66,7 +66,7 @@ $(document).ready(function() {
                 //Attack Klump
                 if ($(".foe").is("#gen-klump")){
                     var a = parseInt(document.getElementById("dk-hp").textContent);
-                    $("#dk-hp").html(a - 20);
+                    $("#dk-hp").html(a - 15);
                     var b = parseInt(document.getElementById("klump-hp").textContent);
                     $("#klump-hp").html(b - dkAttackPower);
                     $("#messages").html("<p>You attacked Klump for " + dkAttackPower +" damage!</p><p>Klump counter-attacked for 20 damage!</p>");
@@ -101,7 +101,7 @@ $(document).ready(function() {
                 diddyAttack();
                 if ($(".foe").is("#king-k-rool")){
                     var a = parseInt(document.getElementById("diddy-hp").textContent);
-                    $("#diddy-hp").html(a - 25);
+                    $("#diddy-hp").html(a - 20);
                     var b = parseInt(document.getElementById("krool-hp").textContent);
                     $("#krool-hp").html(b - diddyAttackPower);
                     $("#messages").html("<p>You attacked King K. Rool for " + diddyAttackPower +" damage!</p><p>King K. Rool counter-attacked for 25 damage!</p>");
@@ -114,7 +114,7 @@ $(document).ready(function() {
                 //Attack Klump
                 if ($(".foe").is("#gen-klump")){
                     var a = parseInt(document.getElementById("diddy-hp").textContent);
-                    $("#diddy-hp").html(a - 20);
+                    $("#diddy-hp").html(a - 15);
                     var b = parseInt(document.getElementById("klump-hp").textContent);
                     $("#klump-hp").html(b - diddyAttackPower);
                     $("#messages").html("<p>You attacked Klump for " + diddyAttackPower +" damage!</p><p>Klump counter-attacked for 20 damage!</p>");
@@ -150,7 +150,7 @@ $(document).ready(function() {
                 //Attack Diddy
                 if ($(".foe").is("#diddy-kong")){
                     var a = parseInt(document.getElementById("krool-hp").textContent);
-                    $("#krool-hp").html(a - 25);
+                    $("#krool-hp").html(a - 10);
                     var b = parseInt(document.getElementById("diddy-hp").textContent);
                     $("#diddy-hp").html(b - kroolAttackPower);
                     $("#messages").html("<p>You attacked Diddy Kong for " + kroolAttackPower +" damage!</p><p>Diddy Kong counter-attacked for 25 damage!</p>");
@@ -163,7 +163,7 @@ $(document).ready(function() {
                 //Attack Klump
                 if ($(".foe").is("#gen-klump")){
                     var a = parseInt(document.getElementById("krool-hp").textContent);
-                    $("#krool-hp").html(a - 25);
+                    $("#krool-hp").html(a - 15);
                     var b = parseInt(document.getElementById("klump-hp").textContent);
                     $("#klump-hp").html(b - kroolAttackPower);
                     $("#messages").html("<p>You attacked Klump for " + kroolAttackPower +" damage!</p><p>Klump counter-attacked for 20 damage!</p>");
@@ -177,7 +177,7 @@ $(document).ready(function() {
                 //Attack DK
                 if ($(".foe").is("#donkey-kong")){
                     var a = parseInt(document.getElementById("krool-hp").textContent);
-                    $("#krool-hp").html(a - 25);
+                    $("#krool-hp").html(a - 20);
                     var b = parseInt(document.getElementById("dk-hp").textContent);
                     $("#dk-hp").html(b - kroolAttackPower);
                     $("#messages").html("<p>You attacked Donkey Kong for " + kroolAttackPower +" damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
@@ -198,7 +198,7 @@ $(document).ready(function() {
                 klumpAttack();
                 if ($(".foe").is("#diddy-kong")){
                     var a = parseInt(document.getElementById("klump-hp").textContent);
-                    $("#klump-hp").html(a - 25);
+                    $("#klump-hp").html(a - 5);
                     var b = parseInt(document.getElementById("diddy-hp").textContent);
                     $("#diddy-hp").html(b - klumpAttackPower);
                     $("#messages").html("<p>You attacked Diddy Kong for " + klumpAttackPower +" damage!</p><p>Diddy Kong counter-attacked for 25 damage!</p>");
@@ -211,7 +211,7 @@ $(document).ready(function() {
                 //Attack King K Rool
                 if ($(".foe").is("#king-k-rool")){
                     var a = parseInt(document.getElementById("klump-hp").textContent);
-                    $("#klump-hp").html(a - 25);
+                    $("#klump-hp").html(a - 15);
                     var b = parseInt(document.getElementById("krool-hp").textContent);
                     $("#krool-hp").html(b - klumpAttackPower);
                     $("#messages").html("<p>You attacked Klump for " + klumpAttackPower +" damage!</p><p>King K. Rool counter-attacked for 20 damage!</p>");
@@ -240,6 +240,12 @@ $(document).ready(function() {
                     $("#messages").html("<p>You Lose! Click to play again!</p>");
                 };
             };
+        //win condition
+        if (!$("div").hasClass("npc-character")){
+            $("#messages").html("<p>You Win! Click to play again!</p>");
+            console.log("you win");
+        }
+
         });
 
 });
