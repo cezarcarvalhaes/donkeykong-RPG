@@ -8,13 +8,13 @@ $(document).ready(function () {
 
     //functions to increment attack power
     function dkAttack() {
-        dkAttackPower += 15;
+        dkAttackPower += 14;
     };
     function diddyAttack() {
-        diddyAttackPower += 15;
+        diddyAttackPower += 16;
     };
     function kroolAttack() {
-        kroolAttackPower += 10;
+        kroolAttackPower += 8;
     };
     function klumpAttack() {
         klumpAttackPower += 10;
@@ -151,7 +151,7 @@ $(document).ready(function () {
             //Attack DK
             if ($(".foe").is("#donkey-kong")) {
                 var a = parseInt(document.getElementById("diddy-hp").textContent);
-                $("#dk-hp").html(a - 10);
+                $("#diddy-hp").html(a - 10);
                 var b = parseInt(document.getElementById("dk-hp").textContent);
                 $("#dk-hp").html(b - diddyAttackPower);
                 $("#messages").html("<p>You attacked Donkey Kong for " + diddyAttackPower + " damage!</p><p>Donkey Kong counter-attacked for 10 damage!</p>");
