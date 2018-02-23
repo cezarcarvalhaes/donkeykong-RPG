@@ -8,30 +8,36 @@ $(document).ready(function() {
 
     //functions to increment attack power
     function dkAttack() {
-        dkAttackPower += 9;
+        dkAttackPower += 15;
     };
     function diddyAttack() {
-        diddyAttackPower += 8;
+        diddyAttackPower += 15;
     };
     function kroolAttack() {
-        kroolAttackPower += 12;
+        kroolAttackPower += 10;
     };
     function klumpAttack() {
         klumpAttackPower += 10;
     };
 
-    //hides buttons until needed.
+    //hides elements until needed.
     $(".restart").hide();
     $(".attack").hide();
+    $(".character-defender").hide();
+    $(".info").hide();
 
     function selectFoe (){
         //Select a defender and remove ability to select multiple defenders
+        $(".character-defender").show();
+        $(".info").show();
+        $("#messages").html("<p>Choose a defender from your enemies!</p>");
         $(".npc-character").on("click", function(){
             $(this).addClass("foe").removeClass("user-character").appendTo(".your-character"); 
             $(".your-character").addClass("battle");
             if ($(".your-character").has(".foe")){
                 $(".npc-character").off("click");
                 $(".attack").show();
+                $("#messages").html("<p>Click to attack!</p>");
             };
         });
     };
@@ -39,12 +45,17 @@ $(document).ready(function() {
     function winGame (){
         $("#messages").html("<p>You Win! Click to play again!</p>");
         $(".restart").show();
-        console.log("you win!")
+        $(".attack").hide();
+        $(".character-defender").hide();
+        $(".info").hide();
     }
 
     function loseGame(){
         $("#messages").html("<p>You Lose! Click to play again!</p>");
         $(".restart").show();
+        $(".attack").hide();
+        $(".character-defender").hide();
+        $(".info").hide();
     }
 
     //select character and start game. Enemies move below.
