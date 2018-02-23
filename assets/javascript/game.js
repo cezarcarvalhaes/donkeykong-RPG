@@ -14,10 +14,10 @@ $(document).ready(function () {
         diddyAttackPower += 16;
     };
     function kroolAttack() {
-        kroolAttackPower += 8;
+        kroolAttackPower += 5;
     };
     function klumpAttack() {
-        klumpAttackPower += 10;
+        klumpAttackPower += 8;
     };
 
     //hides elements until needed.
@@ -56,6 +56,7 @@ $(document).ready(function () {
         $(".attack").hide();
         $(".character-defender").hide();
         $(".info").hide();
+        $(".user-character").hide();
     }
 
     //select character and start game. Enemies move below.
