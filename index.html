@@ -1,68 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="http://code.jquery.com/jquery-3.3.1.js"
-			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
-    <script src ="assets/javascript/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="crossorigin="anonymous"></script>    
+    <script src="assets/javascript/game.js"></script>
     <title>Donkey Kong RPG</title>
 </head>
+
 <body>
-    <div class = "container-fluid">
-        <div id = "messages"><p>Choose your character!</p></div>
-        <div class = "restart"><button type="button" class="btn btn-primary restart" id ="restart-button">Restart</button></div>
-        <div id = "titles">
-            <div class = "character-defender">
-                        <h2>Your Character:</h2>
+    <div class="container-fluid">
+        <div id="messages">
+            <p>Choose your character!</p>
+        </div>
+        <div class="restart">
+            <button type="button" class="btn btn-primary restart" id="restart-button">Restart</button>
+        </div>
+        <div id="titles">
+            <div class="character-defender">
+                <h2>Your Character:</h2>
             </div>
-            <div class = "character-defender">
-                    <h2>Defender:</h2>
+            <div class="character-defender">
+                <h2>Defender:</h2>
             </div>
         </div>
-        <div class = "your-character">
-                <div class= "character" id= "donkey-kong">
-                    <h4>Donkey Kong</h4>
-                    <img class= "dk-character" alt="Donkey Kong" src="assets/images/DK.png">
-                    <h4>HP: <span id = "dk-hp" class="hp">120</span></h4>
-                </div>
-                <div class= "character" id = "diddy-kong">
-                        <h4>Diddy Kong</h4>
-                    <img class= "dk-character" id="diddy" alt="Diddy Kong" src="assets/images/diddy.png">
-                    <h4>HP: <span id = "diddy-hp" class="hp">100</span></h4>
-                </div>
-                <div class= "character" id="king-k-rool">
-                    <h4>King K. Rool</h4>
-                    <img class= "dk-character" id ="krool" alt="King K. Rool" src="assets/images/krool.png">
-                    <h4>HP: <span id = "krool-hp" class="hp">180</span></h4>
-                </div>
-                <div class= "character" id = "gen-klump">
-                        <h4>Klump</h4>
-                    <img class= "dk-character" id= "klump" alt="Klump" src="assets/images/Klump.png">
-                    <h4>HP: <span id = "klump-hp" class="hp">150</span></h4>
-                </div>
+        <div class="your-character">
+            <div class="character" id="donkey-kong">
+                <h4>Donkey Kong</h4>
+                <img class="dk-character" alt="Donkey Kong" src="assets/images/DK.png">
+                <h4>HP:
+                    <span id="dk-hp" class="hp">120</span>
+                </h4>
+            </div>
+            <div class="character" id="diddy-kong">
+                <h4>Diddy Kong</h4>
+                <img class="dk-character" id="diddy" alt="Diddy Kong" src="assets/images/diddy.png">
+                <h4>HP:
+                    <span id="diddy-hp" class="hp">100</span>
+                </h4>
+            </div>
+            <div class="character" id="king-k-rool">
+                <h4>King K. Rool</h4>
+                <img class="dk-character" id="krool" alt="King K. Rool" src="assets/images/krool.png">
+                <h4>HP:
+                    <span id="krool-hp" class="hp">180</span>
+                </h4>
+            </div>
+            <div class="character" id="gen-klump">
+                <h4>Klump</h4>
+                <img class="dk-character" id="klump" alt="Klump" src="assets/images/klump.png">
+                <h4>HP:
+                    <span id="klump-hp" class="hp">150</span>
+                </h4>
+            </div>
         </div>
         <div class="info">
             <button type="button" class="btn btn-danger attack">Attack!</button>
         </div>
 
-        <div class = "info">
-                <h2>Enemies Available to Attack:</h2>
+        <div class="info">
+            <h2>Enemies Available to Attack:</h2>
         </div>
-        <div class = "your-enemies">        
+        <div class="your-enemies">
         </div>
-        
+
 
 
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
