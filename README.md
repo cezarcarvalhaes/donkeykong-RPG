@@ -1,8 +1,13 @@
 # Donkey Kong RPG!
 
-This Donkey Kong Country RPG was developed by Cezar Carvalhaes in 2018.
+Donkey Kong RPG is an RPG game created for the browser. It's coded primarily in Javascript and jQuery. 
 
-To Play:
+**Check Out the live app at:** https://cezarcarvalhaes.github.io/week-4-game
+
+*Donkey Kong Country RPG was developed by Cezar Carvalhaes in 2018.
+
+---
+**To Play:**
 
 1. Choose your character. 
 2. Choose an enemy to attack from the 'available enemies' section.
